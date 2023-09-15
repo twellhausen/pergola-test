@@ -8,3 +8,21 @@ components:
   - 80
   ingresses: 
   - host: www
+- name: hello-world-job
+  docker:
+    image: hello-world
+  scheduled: @release
+  max-retries: 4
+- name: hello-world-cron-job
+  docker:
+    image: hello-world
+  scheduled: 0 * * * *
+  max-retries: 4
+- name: waiting-job
+  docker:
+    image: alpine:latest
+  command:
+  - "sh"
+  - "-c"
+  - "sleep 120"
+  scheduled: @release
