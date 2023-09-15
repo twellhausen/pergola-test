@@ -11,12 +11,12 @@ components:
 - name: hello-world-job
   docker:
     image: hello-world
-  scheduled: @release
+  scheduled: "@release"
   max-retries: 4
 - name: hello-world-cron-job
   docker:
     image: hello-world
-  scheduled: 0 * * * *
+  scheduled: "0 * * * *"
   max-retries: 4
 - name: waiting-job
   docker:
@@ -25,4 +25,4 @@ components:
   - "sh"
   - "-c"
   - "sleep 120"
-  scheduled: @release
+  scheduled: "@release"
