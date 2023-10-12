@@ -9,9 +9,23 @@ components:
   ingresses: 
   - host: www
   storage:
-  - name: storage-test
-    path: /tmp
-    size: 10M
+  - name: storage-persistent
+    path: /tmp/persistent
+    size: 1Gi
+  - name: storage-memory
+    path: /tmp/memory
+    size: 500M
+    type: memory
+  - name: storage-tmp
+    path: /tmp/tmp
+    size: 2Gi
+    type: temporary
+  scaling:
+    min: 2
+    max: 3
+  resources:
+    cpu: 500m
+    memory: 1Gi    
 - name: hello-world-job
   docker:
     image: hello-world
