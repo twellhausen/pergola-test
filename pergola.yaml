@@ -31,6 +31,9 @@ components:
     image: hello-world
   scheduled: "@release"
   max-retries: 4
+- name: stateless
+  docker:
+    image: hello-world
 - name: hello-world-cron-job
   docker:
     image: hello-world
