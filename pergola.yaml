@@ -4,6 +4,9 @@ components:
 - name: web
   docker:
     file: Dockerfile
+    platform: 
+    - arch: amd64
+    - arch: arm64
   ports:
   - 80
   ingresses: 
