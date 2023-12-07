@@ -42,6 +42,9 @@ components:
 - name: waiting-job
   docker:
     image: alpine:latest
+    platform: 
+    - arch: amd64
+    - arch: arm64
   command:
   - "sh"
   - "-c"
